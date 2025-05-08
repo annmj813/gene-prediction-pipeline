@@ -1,0 +1,30 @@
+# gffcompare v0.11.2 | Command line was:
+#gffcompare -r fungidb_reference.gtf -o compare_out braker.gtf
+#
+
+#= Summary for dataset: braker.gtf 
+#     Query mRNAs :    7458 in    6702 loci  (7174 multi-exon transcripts)
+#            (686 multi-transcript loci, ~1.1 transcripts per locus)
+# Reference mRNAs :    9189 in    8314 loci  (8490 multi-exon)
+# Super-loci w/ reference transcripts:     6592
+#-----------------| Sensitivity | Precision  |
+        Base level:    67.2     |    99.6    |
+        Exon level:    65.9     |    76.0    |
+      Intron level:    86.5     |    98.4    |
+Intron chain level:    60.2     |    71.3    |
+  Transcript level:    56.0     |    69.0    |
+       Locus level:    60.8     |    75.5    |
+
+     Matching intron chains:    5114
+       Matching transcripts:    5148
+              Matching loci:    5058
+
+          Missed exons:    6912/49683	( 13.9%)
+           Novel exons:     151/43133	(  0.4%)
+        Missed introns:    5203/40859	( 12.7%)
+         Novel introns:     262/35919	(  0.7%)
+           Missed loci:    1710/8314	( 20.6%)
+            Novel loci:      38/6702	(  0.6%)
+
+ Total union super-loci across all input datasets: 6630 
+7458 out of 7458 consensus transcripts written in compare_out.annotated.gtf (0 discarded as redundant)
