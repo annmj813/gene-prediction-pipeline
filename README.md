@@ -9,22 +9,15 @@ The initial step for genome annotation is to download the genome and SRA files.
 ## Downloading SRA Files
 To download SRA files, 
 <pre>#!/bin/bash
-# SRA download and FASTQ conversion script for HPC
 
-# Load the SRA Toolkit module (if your cluster uses modules)
+# Load the SRA Toolkit module 
 module load sra-tools
 
-# List of SRA accession numbers (one per line in a text file)
+# List of SRA accession numbers 
 SRA_LIST="sra_accessions.txt"
 
 # Directory to store the downloaded data
 DOWNLOAD_DIR="/path/to/your/output_directory"
-
-# Create the directory if it doesn't exist
-mkdir -p "$DOWNLOAD_DIR"
-
-# Change to the download directory
-cd "$DOWNLOAD_DIR" || exit
 
 # Loop through each accession and download + convert
 while read -r SRA_ID; do
@@ -33,7 +26,7 @@ while read -r SRA_ID; do
     # Download the SRA file
     prefetch "$SRA_ID"
     
-    # Convert to FASTQ using fasterq-dump (parallelize with -e)
+    # Convert to FASTQ using fasterq-dump
     fasterq-dump "$SRA_ID" --split-files -e 6 -O "$DOWNLOAD_DIR"
     
     echo "$SRA_ID processing done."
@@ -55,7 +48,7 @@ FASTQ_DIR="/path/to/fastq_output"
 FASTQC_DIR="/path/to/fastqc_output"
 mkdir -p "$FASTQ_DIR" "$FASTQC_DIR"
 
-# Load modules (adjust for your HPC environment)
+# Load modules 
 module load sra-tools
 module load fastqc
 
